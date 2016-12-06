@@ -28,9 +28,7 @@ int main(int argc, char *argv[]){
 		printf("Usage : %s <ip> <port> \n", argv[0]);
 		exit(1);
 	}
-
 	sprintf(name, "[%s]", argv[3]);
-
 	sock = socket(PF_INET, SOCK_STREAM, 0);
 	if(sock == -1)
 		error("socket() error\n");
@@ -51,7 +49,6 @@ int main(int argc, char *argv[]){
 	close(sock);
 	return 0;
 }
-
 void* send_msg(void* arg){
 	int sock =*((int*) arg);
 	char name_msg[NAME_SIZE+BUFF_SIZE];
@@ -66,7 +63,6 @@ void* send_msg(void* arg){
 	}
 	return NULL;
 }
-
 void* recv_msg(void* arg){
 	int sock =*((int*) arg);
 	char name_msg[NAME_SIZE+BUFF_SIZE];
@@ -80,7 +76,6 @@ void* recv_msg(void* arg){
 	}
 	return NULL;
 }
-
 void error(char *msg){
 	fputs(msg,stderr);
 	fputc('\n', stderr);
