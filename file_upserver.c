@@ -10,16 +10,21 @@
 #define BUFSIZE 30  
     
 void error_handling(char *message);  
+
 int main(int argc, char *argv[]){    
 	int serv_sd;  
 	int clnt_sd;  
 	int fd;  
+
 	char buf[BUFSIZE];
 	char cbuf[BUFSIZE]; 
+
 	struct sockaddr_in serv_addr;  
 	struct sockaddr_in clnt_addr;  
+
 	int clnt_addr_size;  
-	int len;  					      
+	int len;  	
+				      
 	if(argc!=2){  
 		printf("Usage : %s <port>\n", argv[0]);  
 		exit(1);  

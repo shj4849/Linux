@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 	if( connect(sd, (struct sockaddr*)&serv_addr, sizeof(serv_addr))==-1 )  
 		error_handling("connect() error!");  
 
-	fgets(cbuf, 10, stdin);
+	scanf("%s",cbuf);
 	fd = open(cbuf, O_WRONLY | O_TRUNC | O_CREAT, 0644);  
 	if(fd == -1)  
 		error_handling("File open error");
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 	while( (len=read(sd, buf, BUFSIZE )) != 0 ){  
 		write(fd, buf, len);   
 	}  
-	write(sd, "Thank you\n", 10);     
+	write(sd, "\nThank you\n", 10);     
 	close(fd);  
 	close(sd);  
 	return 0;  
