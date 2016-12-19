@@ -1,26 +1,18 @@
-hi
-bye
-hello
-good night
-asdfasdasdfasdfa
-asdfsaddddddddddddddddddddddddddd
-dddddddddddddddddddd
-ddddddddddddddddddddddddddd
+a
+ab
+abc
+abcd
+abcde
+abcdef
+abcdefg
 
+abcdefgh
+abcdefghi
+abcdefghij
+abcdefghijk
+abcdefghijkl
 
-
-
-asdfffffasdfasdfasdf
-asdfasd
-as
-d
-
-d
-d
-d
-d
-
-d
-fa
-sdfasdfasdfasdfasdfasdfasdfasdf
-
+abcdefghijklm
+abcdefghijklmn
+abcdefghijklmno
+abcdefghijklmnop

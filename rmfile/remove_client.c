@@ -40,56 +40,13 @@ int main(int argc, char *argv[]){
 	if( connect(sd, (struct sockaddr*)&serv_addr, sizeof(serv_addr))==-1 ){  
 		error_handling("connect() error!");  
 	}
-	len = read(sd,cbuf,BUFSIZE);
-	write(1,cbuf,len);
-	//fgets(cbuf, 10, stdin);	
-	//printf("%s",cbuf);
-	//write(sd, cbuf, 10); //file name
+	scanf("%s",name);
+	write(sd, name, strlen(name)); //file name
+
 	
-	//len = read(sd, cbuf, BUFSIZE);
-	//write(1,cbuf,len);
-	fd = open(cbuf, O_RDONLY);
-	if(fd == -1){
-		error_handling("File open error");
-	}
-	//write(sd, cbuf, 10); //file name
-	
-	
-	
-	
-	
-	//while( (len=read(fd, buf, BUFSIZE )) != 0 ){   //file send
-//		write(sd, buf, len);   
-//	} 
-//	if( shutdown(sd, SHUT_WR) == -1 ){  
-//		error_handling("shutdown error");  
-//	}
-	//len = read(sd, cbuf, BUFSIZE);  
-	//write(1, cbuf, len);
-	close(fd);
+	printf("\n");
 	close(sd);
 	return 0;
-/*
-	scanf("%s", cbuf);	
-	write(sd,cbuf,5);
-	file open
-	fd = open( cbuf, O_RDONLY );
-	if(fd == -1){
-		error_handling("File open error");
-	}
-
-	//file send
-	while( (len=read(fd, buf, BUFSIZE )) != 0 ){  
-		write(sd, buf, len);   
-	}
-  	if( shutdown(sd, SHUT_WR) == -1 ){
-        	error_handling("shutdown error");
-	}  
-	//len = read(sd, cbuf, BUFSIZE);  
-	//write(1, cbuf, len);  	     
-	close(fd);  
-	close(sd);  
-	return 0; */ 
 }  
   
 void error_handling(char *message){  

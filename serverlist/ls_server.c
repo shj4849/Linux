@@ -7,8 +7,9 @@
 #include <sys/types.h>  
 #include <sys/socket.h>  
 #include <dirent.h>  
-#define BUFSIZE 30  
+#define BUFSIZE 50  
 void error_handling(char *message);  
+
 int main(int argc, char *argv[]){    
 	int serv_sd;  
 	int clnt_sd;  
@@ -47,9 +48,12 @@ int main(int argc, char *argv[]){
 		error_handling("accept() error");
 	
         int lslen = read(clnt_sd,buf,BUFSIZE);//      read1
-	
+	printf("%s\n",buf);
+	getcwd(lsbuff, BUFSIZE);
+	printf("%s\n",lsbuff);
         if(strcmp(buf,"ls")==0){
 		getcwd(lsbuff, BUFSIZE);
+		printf("%s",lsbuff);
 		if((pdir= opendir(lsbuff))<0){
 			perror("opendir");
 			exit(1);
@@ -64,6 +68,7 @@ int main(int argc, char *argv[]){
                 	len = read(clnt_sd,buf,2);        // read 2
                 	buf[2]='\0';
                 	if(strcmp(buf,"ok")==0){
+				printf("%s\n",pde->d_name);
                       		write(clnt_sd,pde->d_name,strlen(pde->d_name));	//write 2
 			}
 		}

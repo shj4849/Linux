@@ -47,7 +47,7 @@ int main(int argc, char *argv[]){
 				printf("%-20s",buf);
 				buf[0]='\0';
 			}
-			if(len<0){
+			else if(len<0){
 				printf("exit");
 				exit(0);
 			}
